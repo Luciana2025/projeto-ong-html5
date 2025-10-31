@@ -1,1 +1,132 @@
 
+/* ==========================
+   SISTEMA DE DESIGN - AMEMAIS
+   ========================== */
+
+/* 🎨 Paleta de cores */
+:root {
+  --cor-primaria: #ff914d;
+  --cor-secundaria: #0077b6;
+  --cor-fundo: #f8f9fa;
+  --cor-texto: #212529;
+  --cor-clara: #ffffff;
+  --cor-cinza: #dee2e6;
+  --cor-sucesso: #28a745;
+  --cor-erro: #e63946;
+}
+
+/* 🧱 Espaçamento modular */
+:root {
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+}
+
+/* 🔠 Tipografia */
+:root {
+  --fonte-titulo: 'Poppins', sans-serif;
+  --fonte-corpo: 'Arial', sans-serif;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+}
+
+/* ==========================
+   ESTILO GERAL
+   ========================== */
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-corpo);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: var(--esp-2);
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-xl);
+}
+
+/* MENU */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--esp-3);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   LAYOUT PRINCIPAL
+   ========================== */
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--esp-3);
+  padding: var(--esp-4);
+}
+
+section {
+  grid-column: 1 / -1;
+  background: var(--cor-clara);
+  padding: var(--esp-3);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   RESPONSIVIDADE
+   ========================== */
+
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
